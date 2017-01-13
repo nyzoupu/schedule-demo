@@ -15,7 +15,7 @@ public class QuartzTest {
             // and start it off
             scheduler.start();
 
-            scheduler.shutdown();
+//            scheduler.shutdown();
 
         } catch (SchedulerException se) {
             se.printStackTrace();
