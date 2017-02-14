@@ -7,21 +7,23 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.pnz.service.encache.CacheService;
-import com.pnz.test.base.AbstractTestBase;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations ={"classpath*:applicationContext.xml"})
-public class EncacheTest extends AbstractTestBase{
+@ContextConfiguration(locations = { "classpath*:applicationContext.xml" })
+public class EncacheTest /*extends AbstractTestBase*/{
 
     @Autowired
     private CacheService cacheService;
-    
+
     public EncacheTest() {
     }
 
     @Test
-    public void testEncache(){
-        cacheService.getTrial("34");
+    public void testEncache() {
+        cacheService.putTrial(5);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(cacheService.getTrial(5));
+        }
     }
 
     /**
